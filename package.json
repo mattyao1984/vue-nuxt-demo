@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "axios": "^0.17.0",
+    "node-sass": "^4.6.0",
     "nuxt": "^1.0.0-rc11",
+    "sass-loader": "^6.0.6",
+    "scss-loader": "^0.0.1",
     "tachyons": "^4.9.0",
     "tachyons-debug": "^1.1.10"
   },

@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   h3 {
     margin: 0 0 10px;
   }
@@ -24,11 +24,13 @@
   ul {
     margin: 20px 0 50px 10px;
     padding: 0;
-  }
 
-  ul.user-list li {
-    display: inline-block;
-    margin-right: 30px;
+    &.user-list {
+      li {
+        display: inline-block;
+        margin-right: 30px;
+      }
+    }
   }
 </style>
 
