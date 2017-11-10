@@ -1,18 +1,46 @@
 <template>
   <div class="f1 code">
-    Hello World!
-    <ul>
+    <h3>Users:</h3>
+    <ul class="user-list">
       <li v-for="user in users" :key="user.id">
         {{user.login}}
+      </li>
+    </ul>
+
+    <h3>Products:</h3>
+    <ul class="product-list">
+      <li v-for="product in products" :key="product.id">
+        {{product.name}}
       </li>
     </ul>
   </div>
 </template>
 
+<style>
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  ul {
+    margin: 20px 0 50px 10px;
+    padding: 0;
+  }
+
+  ul.user-list li {
+    display: inline-block;
+    margin-right: 30px;
+  }
+</style>
+
 <script>
   import axios from '~/plugins/axios';
+  import { mapState } from 'vuex';
 
   export default {
+    computed: mapState([
+      'products'
+    ]),
+
     asyncData() {
       return axios.get('users')
         .then(res => ({
