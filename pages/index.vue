@@ -1,7 +1,18 @@
 <template>
   <div class="f1 code">
     <h3>Ids:</h3>
-    {{ids}}
+    <ul class="id-list">
+      <li v-for="id in ids" :key="id">
+        {{id}}
+      </li>
+    </ul>
+
+    <h3>First 8 Items:</h3>
+    <ul class="list item-list pa1">
+      <li v-for="(item, index) in items" :key="item.id">
+        {{index + 1}}. {{item.title}}
+      </li>
+    </ul>
 
     <h3>Products:</h3>
     <ul class="product-list">
@@ -21,7 +32,7 @@
     margin: 20px 0 50px 10px;
     padding: 0;
 
-    &.user-list {
+    &.id-list {
       li {
         display: inline-block;
         margin-right: 30px;
@@ -37,7 +48,8 @@
   export default {
     computed: mapState([
       'products',
-      'ids'
+      'ids',
+      'items'
     ]),
 
     asyncData() {
