@@ -7,12 +7,16 @@ export const state = () => ({
       id: 1,
       name: 'iTunes Card ($100)'
     }
-  ]
+  ],
+  ids: []
 });
 
 export const mutations = {
   setProducts(state, products) {
     state.products = products;
+  },
+  setIds(state, ids) {
+    state.ids = ids;
   }
 };
 
@@ -35,6 +39,10 @@ export const actions = {
     }
     const products = response.data;
 
+    const storiesRes = await axios.get('topstories.json');
+    const ids = storiesRes.data;
+
     commit('setProducts', products);
+    commit('setIds', ids);
   }
 };

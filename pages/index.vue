@@ -1,11 +1,7 @@
 <template>
   <div class="f1 code">
-    <h3>Users:</h3>
-    <ul class="user-list">
-      <li v-for="user in users" :key="user.id">
-        {{user.login}}
-      </li>
-    </ul>
+    <h3>Ids:</h3>
+    {{ids}}
 
     <h3>Products:</h3>
     <ul class="product-list">
@@ -40,7 +36,8 @@
 
   export default {
     computed: mapState([
-      'products'
+      'products',
+      'ids'
     ]),
 
     asyncData() {
