@@ -1,6 +1,6 @@
 <template>
   <div class="pa1">
-    <h1>Top</h1>
+    <h1 class="code f1">Top</h1>
     <Items></Items>
   </div>
 </template>

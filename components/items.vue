@@ -1,13 +1,13 @@
 <template>
   <div class="f1 code">
-    <h3>First 8 Items:</h3>
+    <h3 class="f3">First 8 Items:</h3>
     <ul class="list item-list pa1">
       <li v-for="(item, index) in items" :key="item.id">
         {{index + 1}}. {{item.title}}
       </li>
     </ul>
 
-    <h3>Products:</h3>
+    <h3 class="f3">Products:</h3>
     <ul class="product-list">
       <li v-for="product in products" :key="product.id">
         {{product.name}}
@@ -25,10 +25,10 @@
     margin: 20px 0 50px 10px;
     padding: 0;
 
-    &.id-list {
+    &.product-list {
       li {
-        display: inline-block;
         margin-right: 30px;
+        list-style: none;
       }
     }
   }
