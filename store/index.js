@@ -25,7 +25,7 @@ export const mutations = {
 };
 
 export const actions = {
-  async nuxtServerInit({commit}) {
+  async LOAD_ITEMS({commit}, dataUrl) {
     // create fake data response to update local state
     const response = {
       data: [
@@ -41,7 +41,7 @@ export const actions = {
     }
     const products = response.data;
 
-    const storiesRes = await axios.get('topstories.json');
+    const storiesRes = await axios.get(dataUrl);
     const ids = storiesRes.data;
 
     // get the first 8 ids
@@ -52,8 +52,19 @@ export const actions = {
     const itemPromises = await Promise.all(idPromises);
     const items = itemPromises.map(res => res.data);
 
+    // Handling items not existed
+    const realItems = items.map(
+      item =>
+        item
+          ? item
+          : {
+            id: 999,
+            title: 'Item does not exist.'
+          }
+    );
+
     commit('setProducts', products);
     commit('setIds', ids);
-    commit('setItems', items);
+    commit('setItems', realItems);
   }
 };
