@@ -1,12 +1,5 @@
 <template>
   <div class="f1 code">
-    <h3>Ids:</h3>
-    <ul class="id-list">
-      <li v-for="id in ids" :key="id">
-        {{id}}
-      </li>
-    </ul>
-
     <h3>First 8 Items:</h3>
     <ul class="list item-list pa1">
       <li v-for="(item, index) in items" :key="item.id">

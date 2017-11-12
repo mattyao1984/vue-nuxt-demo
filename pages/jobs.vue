@@ -1,6 +1,6 @@
 <template>
   <div class="pa1">
-    <h1>Top</h1>
+    <h1>Jobs</h1>
     <Items></Items>
   </div>
 </template>
@@ -17,7 +17,7 @@
       Items
     },
     async fetch({ store }) {
-      await store.dispatch('LOAD_ITEMS', 'topstories.json');
+      await store.dispatch('LOAD_ITEMS', 'newstories.json');
     }
   }
 </script>

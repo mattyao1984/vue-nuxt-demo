@@ -1,5 +1,8 @@
 <template>
-  <Items></Items>
+  <div class="pa1">
+    <h1>New</h1>
+    <Items></Items>
+  </div>
 </template>
 
 <style lang="scss">
