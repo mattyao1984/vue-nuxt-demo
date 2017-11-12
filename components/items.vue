@@ -2,8 +2,12 @@
   <div class="f1 code">
     <h3 class="f3">First 8 Items:</h3>
     <ul class="list item-list pa1">
-      <li v-for="(item, index) in items" :key="item.id">
+      <li class="item" v-for="(item, index) in items" :key="item.id">
         {{index + 1}}. {{item.title}}
+
+        <div class="item-time f5">
+          {{item.time | timeSince}} ago
+        </div>
       </li>
     </ul>
 
@@ -16,7 +20,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   h3 {
     margin: 0 0 10px;
   }
@@ -24,6 +28,18 @@
   ul {
     margin: 20px 0 50px 10px;
     padding: 0;
+
+    li {
+      margin-bottom: 40px;
+
+      &.item {
+        display: flex;
+
+        .item-time {
+          align-self: flex-end;
+        }
+      }
+    }
 
     &.product-list {
       li {

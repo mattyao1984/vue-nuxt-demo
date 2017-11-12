@@ -30,5 +30,11 @@ module.exports = {
   */
   build: {
     vendor: ["axios"]
-  }
+  },
+  /*
+  ** Plugins configuration
+  */
+  plugins: [
+    '~/plugins/filters'
+  ]
 }
